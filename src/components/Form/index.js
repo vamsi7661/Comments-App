@@ -29,7 +29,7 @@ class Form extends Component {
     console.log(commentsData)
     const updatedCommentData = commentsData.map(eachComment => ({
       commentId: eachComment.id,
-      comment: eachComment.name,
+      comment: eachComment.body,
     }))
     this.setState({commentsList: updatedCommentData})
   }
@@ -92,13 +92,13 @@ class Form extends Component {
               ))}
             </select>
           </form>
-          <ul className="comments-container">
+          <div className="comments-container">
             {commentsList.map(eachComment => (
-              <li key={eachComment.commentId} className="comment">
+              <p key={eachComment.commentId} className="comment">
                 {eachComment.comment}
-              </li>
+              </p>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     )
